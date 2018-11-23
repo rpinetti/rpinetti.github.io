@@ -115,7 +115,7 @@ ul li:hover a {
 	color: #717070;
 	margin-bottom: 5px;
 	text-align: center;
-	height: 45px;
+	max-height: 45px;
 }
 .gallery {
 	clear: both;
@@ -185,7 +185,8 @@ footer {
 	padding-bottom: 35px;
 }
 .footer_column {
-	width: 50%;
+	width: 50%;	
+	max-height: 400px;
 	text-align: center;
 	padding-top: 30px;
 	float: left;
@@ -199,7 +200,7 @@ footer .footer_column p {
 	background-color: #FFFFFF;
 }
 .cards {
-	width: 100%;
+	width: auto;
 	height: auto;
 	max-width: 400px;
 	max-height: 200px;
