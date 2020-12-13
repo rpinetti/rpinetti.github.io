@@ -34,6 +34,7 @@
 </head>
 
 <body>
+
   <!-- Navigation -->
   <header class="flex-start center shadow">
     <h4 class="logo">RMP</h4>
@@ -61,51 +62,78 @@
   </header>
 
   <!-- Main Container -->
-  <div class="container center shadow">
+  <div class="flex-start container center shadow">
 
     <!-- About Section -->
     <section class="about flex-start" id="about">
       <h1>Roberto Martinelli Pinetti</h1>
       <p class="text center" data-i18n="about"></p>
-      <picture class="myphoto" id="myphoto">
+      <picture id="myphoto" class="shadow">
       </picture>
     </section>
 
     <!-- Skill Section -->
     <section class="skill" id="skill">
       <div class="detail shadow">
-        <h1 class="title" data-i18n="title-skill">
-        </h1>
-        <div class="group flex-start">
-          <div class="col flex-start shadow">
-
+        <h1 class="title" data-i18n="title-skill"></h1>
+      </div>
+      <div class="flex-start group">
+        <div class="col flex-start shadow" id="skillCol1">
+          <div class="flex-start box icon-top">
+            <img src="./Vendor/bootstrap/icons/bootstrap.svg" alt="" height="100%" title="Bootstrap">
           </div>
-          <div class="col flex-start shadow">
-
+          <div class="flex-start box">
+            <h2 data-i18n="skill1-title"></h2>
           </div>
-          <div class="col flex-start shadow">
-
+          <div class="flex-start box box-text">
+            <p data-i18n='skill1-define'></p>
+          </div>
+          <div class="flex-start box">
+            <h3 data-i18n="skill1-subtitle1"></h3>
+          </div>
+          <div class="flex-start box box-text">
+            <p>SPA ABAP, SAP PI, Java</p>
+          </div>
+          <div class="flex-start box">
+            <h3 data-i18n="skill1-subtitle2"></h3>
+          </div>
+          <div class="flex-start box box-text">
+            <p>SAP HANA</p>
+            <p>Node JS</p>
+            <p>MySQL</p>
+            <p>PostgreSQL</p>
           </div>
         </div>
-        <div class="footer flex-start center">
-          <a class="button">Download</a>
+        <div class="col flex-start shadow" id="skillCol2">
+
+        </div>
+        <div class="col flex-start shadow" id="skillCol3">
+
         </div>
       </div>
+      <div class="footer flex-start center">
+        <a class="button">Download</a>
+      </div>      
     </section>
+  </div>
+  <!-- Main Container Ends -->
 
-    <!-- Banner -->
-    <article class="banner center shadow">
-      <h1 data-i18n="title-banner"></h1>
-      <p class="text center" data-i18n="banner"></p>
-      <p class="footer text center">
-        <a class="button" href="#contact" data-i18n="menu-contact"></a>
-      </p>
-    </article>
+  <!-- Banner -->
+  <article class="flex-start banner center shadow">
+    <h1 data-i18n="title-banner"></h1>
+    <p class="text center" data-i18n="banner"></p>
+    <p class="footer text center">
+      <a class="button" href="#contact" data-i18n="menu-contact"></a>
+    </p>
+  </article>
 
-    <!-- Experience -->
+  <!-- Experience -->
+  <div class="flex-start container center shadow">
     <section class="expirience center" id="expirience">
-      <h1 data-i18n="title-expirience"></h1>
-      <div class="group">
+      <div class="top">
+        <h1 data-i18n="title-expirience"></h1>
+      </div>
+      <div class="flex-start group">
         <div class="col" id="xpCol1">
           <!--
           <div class="line">
@@ -124,20 +152,18 @@
         </div>
       </div>
     </section>
-
   </div>
-  <!-- Main Container Ends -->
 
   <!-- Footer Section -->
   <footer>
     <section class="footer_banner" id="contact">
       <h2>Roberto Martinelli Pinetti</h2>
       <div class="contact">
-        <p class="hero_header">São Paulo - BR</p>
-        <p class="hero_header">(11) 9.8962-8060</p>
-        <p class="hero_header">robertopinetti@gmail.com</p>
-        <div class="contact">
-          <p class="hero_header">
+        <p>São Paulo - BR</p>
+        <p>(11) 9.8962-8060</p>
+        <p>robertopinetti@gmail.com</p>
+        <div class="social">
+          <p>
             <a href="https://www.linkedin.com/in/roberto-martinelli-pinetti/"><img alt="LinkedIn"
                 src="Assets/images/Social-media-icons/linkedin.png" class="social_media" /></a>
             <a href="https://www.facebook.com/robertompinetti"><img alt="Facebook"

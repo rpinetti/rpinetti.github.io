@@ -6,17 +6,21 @@
     }
 
     h2 {
-        font-size: 1.0em;
+        font-size: 1.2em;
     }
 
     h3 {
-        font-size: 1.0em;
+        font-size: 1.2em;
     }
 
     header {
         text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    header .logo {
+        margin-left: 0px;
     }
 
     header nav {
@@ -36,11 +40,11 @@
     }
 
     .about h1 {
-        margin-left: 10%;
-        margin-left: 10%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
-    .myphoto {
+    .about picture {
         width: 200px;
         height: 200px;
     }
@@ -51,9 +55,15 @@
         padding-bottom: 20px;
     }
 
+    .skill .detail{
+        padding-top: 30px;
+        height: 40px;
+        padding-bottom: 20px;
+    }
+
     .skill .group {
-        display: block;
-        margin-top: 50px;
+        flex-direction: column;
+        margin-top: 3rem;
         margin-left: 0px;
         margin-right: 0px;
     }
@@ -64,18 +74,35 @@
 
     .banner {
         margin-top: 1700px;
+        width: calc(100% + 10% );
+        margin-left: -5%;
     }
 
     .expirience {
         margin-top: 0px;
     }
     
+    .expirience .top {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    .expirience .top h1 {
+        color: rgba(47, 54, 62, 1);
+    }
+
     .expirience .group {
         display: block;
+        border: 1px solid rgba(88, 155, 167, 1);
+        border-radius: 20px;
+        margin: 20px 30px;
     }
 
     .expirience .col {
         margin: 0px;
+        border: 0px;
         margin-left: 5px;
         margin-right: 5px;
     }
@@ -85,6 +112,11 @@
         padding-left: 15px;
         font-size: 1em;
         font-weight: bold;
+    }
+
+    .expirience .line .year {
+        width: 70px;
+        height: 70px;
     }
 
     .expirience .line .detail p {

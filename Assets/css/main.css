@@ -15,12 +15,14 @@ h1 {
     font-size: 2.0em;
     text-align: center;
     font-weight: bold;
+    color: rgba(255, 255, 255, 1);
 }
 
 h2 {
     font-size: 1.5em;
     text-align: center;
     font-weight: bold;
+    color: rgba(255, 255, 255, 1);
 }
 
 h3 {
@@ -30,15 +32,29 @@ h3 {
 }
 
 body {
-    background-color: #F7F7F7;
+    background-color: rgba(211, 215, 220, 1);
 }
 
 html {
-    overflow-x: hidden ;
+    overflow-x: hidden;
+    overflow-y: scroll !important;
 }
 
+.ajaxBusy {
+    display: none;
+    margin: 0px 0px 0px -50px; /* left margin is half width of the div, to centre it */
+    padding: 3rem 10px 10px 10px;
+    position: absolute;
+    left: 30%;
+    top: 325px;
+    width: 500px;
+    height: 150px;
+    text-align: center;
+    background: #e8e8e8 url(./images/busy.gif) no-repeat center center;
+}    
+
 .button {
-    background-color: #2C9AB7;
+    background-color: rgba(88, 155, 167, 1);
     border-radius: 5px;
     color: #FFFFFF;
     font-size: 1.2em;
@@ -47,6 +63,10 @@ html {
     padding-left: 1.5em;
     padding-right: 1.5em;
     padding-bottom: 1em;
+}
+
+.button:hover {
+    color: #2C4059;
 }
 
 .flex-start {
@@ -79,18 +99,17 @@ header {
     flex-wrap: wrap;
     background-color: #FFFFFF;
     width: 90%;
-    justify-content: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 header .logo {
     flex: 1;
-    color: #404040;
+    color: rgba(47, 54, 62, 1);
     font-weight: bold;
     width: 15%;
     margin-left: 25px;
-    letter-spacing: 4px;
+    letter-spacing: 0.2rem;
 }
 
 header nav {
@@ -118,15 +137,16 @@ header nav ul li a {
 }
 
 header nav ul li:hover a {
-    color: #2C9AB7;
+    color: #2C4059;
 }
 
 /*** Main ***/
 .container {
+    flex-direction: column;
     width: 90%;
     margin-top: 0px;
     background-color: #FFFFFF;
-    min-height: min-content;
+    height: max-content;
 }
 
 /*** About ***/
@@ -138,58 +158,109 @@ header nav ul li:hover a {
     height: min-content;
 }
 
-.myphoto {
+.about picture {
     border-radius: 50%;
     background-color: #404040;
     width: 300px;
     height: 300px;
+    overflow: hidden;
+    object-position: center;
+}
+
+.about h1 {
+    color: rgba(47, 54, 62, 1);
+}
+
+.avatar {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
 }
 
 /*** Skill ****/
 .skill {
     width: 100%;
-    height: min-content;
+    margin-bottom: 3rem;
+}
+
+.skill h2 {
+    font-size: 1.3rem;
+    color: rgba(47, 54, 62, 1);
+}
+
+.skill h3 {
+    font-size: 1.2rem;
+    color: rgba(88, 155, 167, 1);
 }
 
 .skill .detail {
-    border-radius: 20px;
-    background-color: #404040;
+    border-radius: 2rem;
+    background-color: rgba(47, 54, 62, 1);
     color: #FFFFFF;
-    height: 300px;
-    border-top: 2px;
-    padding-top: 50px;
+    height: 15rem;
+    padding-top: 3rem;
 }
 
 .skill .group {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-top: -8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
 }
 
 .skill .col {
+    flex-direction: column;
+    flex: 1 1 200px;
     background-color: #FFFFFF;
     border-radius: 20px;
-    border: 1px #2C9AB7;
+    border: 1px rgba(88, 155, 167, 1);
     border-style: solid;
-    height: 500px;
-    flex: 1 1 200px;
-    margin: 10px 30px;
+    margin: 1rem 1.5rem;
+    height: 40rem;
 }
 
 .skill .footer {
-    margin-top: 30px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill .content {
+    flex-direction: column;
+    margin: 1rem;
+    width: 100%;
+    height: 100%;   
+}
+
+.skill .box {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 2.5rem;
+    width: 100%;
+}
+
+.skill .icon-top {
+    align-self: flex-start;
+    align-items: center;
+    max-width: 100%;
+}
+
+.skill .box-text {
+    font-size: 1.0em;
+    text-align: center;
+    font-weight: bold;
+    width: 80%;
+    color: rgba(113, 123, 140, 1);
 }
 
 /**** Banner ****/
 .banner {
-    margin-top: 425px;
+    flex-direction: column;
     background-color: aquamarine;
     color: #FFFFFF;
-    width: calc(100% + 20% );
-    margin-left: -10%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -200,33 +271,41 @@ header nav ul li:hover a {
 
 /*** Expirience ***/
 .expirience {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.expirience h1 {
+    color: rgba(47, 54, 62, 1);
 }
 
 .expirience .group {
-    display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .expirience .col {
-    border: 1px #2C9AB7;
+    border: 1px rgba(88, 155, 167, 1);
     border-style: solid;
-    min-height: min-content;
+    height: 55rem;
     flex: 1 1 200px;
-    margin: 20px 30px;
+    margin: 20px 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .expirience .line {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 30px;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
     height: 100px;    
     display: inline-flex;
 }
@@ -239,13 +318,13 @@ header nav ul li:hover a {
 .expirience .line .year {
     background-color: #F7F7F7;
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
 }
 
 .expirience .line .year .title {
-    padding-top: 30%;
-    padding-left: 15%;
+    padding-top: 34%;
+    padding-left: 19%;
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -266,14 +345,14 @@ header nav ul li:hover a {
 /*** Footer ****/
 footer {
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     bottom: 0;
-    background-color: #717070;
-    color: #FFFFFF;
+    background-color: rgba(47, 54, 62, 1);
+    color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
     font-weight: lighter;
-    letter-spacing: 2px;
+    letter-spacing: 0.1rem;
     border-top-width: 2px;
 }
 
@@ -293,3 +372,32 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.contact p {
+    color: rgba(255, 255, 255, 1);
+}
+
+.contact .social {
+    margin-top: 3rem;
+}
+
+/* Color Theme Swatches in Hex */
+.Paleta-inteligento-em-cinza-1-hex { color: #2C4059; }
+.Paleta-inteligento-em-cinza-2-hex { color: #717B8C; }
+.Paleta-inteligento-em-cinza-3-hex { color: #D3D7DC; }
+.Paleta-inteligento-em-cinza-4-hex { color: #2F363E; }
+.Paleta-inteligento-em-cinza-5-hex { color: #589BA7; }
+
+/* Color Theme Swatches in RGBA */
+.Paleta-inteligento-em-cinza-1-rgba { color: rgba(44, 64, 89, 1); }
+.Paleta-inteligento-em-cinza-2-rgba { color: rgba(113, 123, 140, 1); }
+.Paleta-inteligento-em-cinza-3-rgba { color: rgba(211, 215, 220, 1); }
+.Paleta-inteligento-em-cinza-4-rgba { color: rgba(47, 54, 62, 1); }
+.Paleta-inteligento-em-cinza-5-rgba { color: rgba(88, 155, 167, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Paleta-inteligento-em-cinza-1-hsla { color: hsla(213, 33, 26, 1); }
+.Paleta-inteligento-em-cinza-2-hsla { color: hsla(217, 10, 49, 1); }
+.Paleta-inteligento-em-cinza-3-hsla { color: hsla(213, 11, 84, 1); }
+.Paleta-inteligento-em-cinza-4-hsla { color: hsla(212, 13, 21, 1); }
+.Paleta-inteligento-em-cinza-5-hsla { color: hsla(189, 30, 50, 1); }
