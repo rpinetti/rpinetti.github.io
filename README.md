@@ -17,3 +17,7 @@
 .Paleta-inteligento-em-cinza-3-rgba { color: rgba(211, 215, 220, 1); }
 .Paleta-inteligento-em-cinza-4-rgba { color: rgba(47, 54, 62, 1); }
 .Paleta-inteligento-em-cinza-5-rgba { color: rgba(88, 155, 167, 1); }
+
+## Run Jekyll
+bundle exec jekyll build
+bundle exec jekyll s
