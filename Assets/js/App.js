@@ -25,6 +25,8 @@ $(document).ready(function ($) {
 	listExperience();
 	// Translate Texts
 	updateText();
+	// Phone Mask
+	phoneMask();
 	// Request Github API for get Perfil
 	readPerfil();
 	// Request Github API for list repositories
@@ -60,6 +62,30 @@ function updateText() {
 	});
 
 } // function updateText() 
+
+/**
+ * API: https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/utils.js
+ * DOC: https://github.com/jackocnr/intl-tel-input/blob/master/README.md
+ * 
+ * @function phoneMask
+ */
+function phoneMask() {
+
+	const input = document.querySelector("#phone");
+
+	window.intlTelInput(input, {
+	initialCountry: "auto",
+	geoIpLookup: function(callback) {
+		fetch("https://ipapi.co/json")
+		.then(function(res) { return res.json(); })
+		.then(function(data) { callback(data.country_code); })
+		.catch(function() { callback(); });
+	},
+	utilsScript:
+		"https://cdn.jsdelivr.net/npm/intl-tel-input@20.2.0/build/js/utils.js",
+	});
+
+}	// function phoneMask()
 
 /**
  * Create Expiriences

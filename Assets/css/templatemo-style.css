@@ -428,3 +428,14 @@ body {
   }
   /* END MEDIA 360 */
   
+
+/* workaround */
+.intl-tel-input {
+  display: table-cell;
+}
+.intl-tel-input .selected-flag {
+  z-index: 4;
+}
+.intl-tel-input .country-list {
+  z-index: 5;
+}
